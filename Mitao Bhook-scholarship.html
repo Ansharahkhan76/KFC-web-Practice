@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: black;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #9c9999;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.button {
+  background-color: transparent;
+  border: red;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  outline-color: red;
+}
+
+
+
+
+
+.kfc-button {
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.kfc-button:hover {
+    background-color: red; /* Red background color on hover */
+}
+
+
+.kfc-login-button {
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+}
+.kfc-login-button:hover {
+    background-color: red; /* Red background color on hover */
+}
+
+.button-order {
+
+  background-color: rgb(240, 46, 46);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 30px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.button-order:hover {
+  background-color: red;
+}
+
+.image-container img {
+    width: 200px; 
+    transition: transform 0.3s;
+}
+
+
+.image-container img:hover {
+    transform: scale(1.2);
+}
+
+
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+	/********* Footer 1 Start **********/
+/*******************************/
+.footer {
+  position: relative;
+  margin-top: 45px;
+  background: #EF233C;
+}
+
+.footer .container-fluid {
+  padding: 60px 0 0 0;
+}
+
+.footer .footer-info {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.footer .footer-info h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer .footer-info h3 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer .footer-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer-menu p {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 0 15px;
+  border-right: 1px solid #ffffff;
+}
+
+.footer .footer-menu p:last-child {
+  border: none;
+}
+
+.footer .footer-social {
+  position: relative;
+  margin-top: 15px;
+}
+
+.footer .footer-social a {
+  display: inline-block;
+}
+
+.footer .footer-social a i {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #ffffff;
+  transition: .3s;
+}
+
+.footer .footer-social a:last-child i {
+  margin: 0;
+}
+
+.footer .footer-social a:hover i {
+  color: #414141;
+}
+
+.footer .copyright {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.footer .copyright::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1px;
+  top: 0;
+  left: 25%;
+  background: rgba(256, 256, 256, .2);
+}
+
+.footer .copyright p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer .copyright .col-md-6:last-child p {
+  text-align: right;
+}
+
+.footer .copyright p a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer .copyright p a:hover {
+  color: #414141;
+}
+
+@media (max-width: 575.98px) {
+  .footer .footer-info h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 600;
+  }
+
+  .footer .footer-info h3 {
+      margin-bottom: 20px;
+      font-size: 16px;
+  }
+
+  .footer .footer-menu p {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 0 5px;
+  }
+}
+
+
+/* Footer 2 Start*/
+.blog-footer {
+padding: 2.5rem 0;
+color: #727272;
+text-align: center;
+background-color: #f9f9f9;
+border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+margin-bottom: 0;
+}
+.blog-footer p{
+font-size: 15px;
+}
+
+/*social media icons*/
+.social-icons{
+  text-align: center;
+}
+
+
+.style {
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  padding: 5px 5px;
+  margin: 15px;
+  box-shadow: 2px 1px 3px 2px #383838;
+  position: relative;
+
+}
+
+.style .fab {
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.style:hover {
+  color: white;
+}
+
+/*For the circle buttom*/
+.amz-btn-circle {
+  border-radius: 50%;
+}
+
+/*For the rounded corner buttom */
+.amz-btn-round {
+  border-radius: 20%;
+}
+
+/*social media cols color define*/
+.col-rev-facebook:hover{
+  background: #3b5998;
+  transform: translate(0,-10px);
+}
+
+.col-rev-facebook a {
+color: #3b5998;
+  text-decoration: none;
+}
+.col-rev-facebook a:hover{
+color: #fff;
+}
+/*YouTube */
+.col-rev-youtube:hover {
+  background-color: #c4302b  ;
+     transform:translate(0, -10px);
+}
+.col-rev-youtube a{
+color:  #c4302b;
+text-decoration: none;
+}
+.col-rev-youtube a:hover{
+color: #fff;
+}
+/*tictok*/
+.col-rev-tiktok:hover {
+background: #000;
+
+     transform:translate(0, -10px);
+}
+.col-rev-tiktok a{
+    color: #000;
+text-decoration: none;
+}
+.col-rev-tiktok a:hover {
+color: #fff;
+}
+
+/*Instagram */
+.col-rev-instagram:hover {
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+
+     transform:translate(0, -10px);
+}
+.col-rev-instagram a{
+    color: #bc2a8d;
+text-decoration: none;
+}
+.col-rev-instagram a:hover {
+color: #fff;
+}
+/*telegram */
+.col-rev-telegram:hover {
+  background-color: #0088CC   ;
+     transform:translate(0, -10px);
+}
+.col-rev-telegram a{
+color:  #0088CC;
+text-decoration: none;
+}
+.col-rev-telegram a:hover{
+color: #fff;
+}
+h1{
+color: red;
+font-weight: bolder;
+}
+.heading{
+color: blue;
+font-weight: bold;
+}
+#pp{
+color: red;
+font-weight: bolder;
+}
+
+
+/*footer 3 start*/
+
+footer{
+/**if you want the footer stick to bottom remove the comment**/
+/**
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+**/
+background: #111;
+height: auto;
+width: 100%;
+font-family: Monospace;
+padding-top: 40px;
+color: #fff;
+}
+
+
+
+.footer-content{
+
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+
+}
+
+.footer-content h3{
+font-size: 1.8rem;
+font-weight: 400;
+text-transform: capitalize;
+line-height: 3rem;
+}
+
+.footer-content p{
+max-width: 500px;
+margin: 10px auto;
+line-height: 28px;
+font-size: 14px;
+}
+
+.footer-content img{
+width: 60px;
+}
+
+.socials{
+list-style: none;
+display: flex;
+align-items: center; 
+justify-content: center;
+margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+margin: 0 10px;
+}
+
+.socials a{
+text-decoration: none;
+color: #fff;
+}
+
+.socials a i{
+font-size: 1.1rem;
+transition: color .4s ease;
+}
+
+.socials a:hover i{
+color: aqua;
+}
+
+.footer-bottom{
+background: #000;
+width: 100vw;
+padding: 20px 0;
+text-align: center;
+}
+
+.footer-bottom p{
+font-size: 14px;
+word-spacing: 2px;
+text-transform: capitalize;
+}
+
+.footer-bottom span{
+text-transform: uppercase;
+opacity: .4;
+font-weight: 200;
+}
+
+.footer-bottom span a{
+text-decoration: none;
+color: #fff;
+}
+
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="about us.html">About Us</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="term& conditions.html">Terms & Conditions</a>
+    <a href="privacy policy.html">Privacy Policy</a>
+    <a href="contact us.html">Contact Us</a>
+    <a href="mitao bhook.html">Mitao Bhook</a>
+    <a href="Mitao Bhook-scholarship.html">Mitao Bhook-scholarship</a>
+    <a href="careers.html">Careers</a>
+  </div>
+</div>
+<strong><span style="font-size:30px;cursor:pointer;color: red;" onclick="openNav()">&#9776;  KFC</span></strong>
+<button class="kfc-button"><a href="login.html" style="color: white;">Delivery</a> </button>
+<button class="kfc-button"><a href="login.html" style="color: white;">Pickup </a></button>
+<button class="kfc-login-button"><a href="login.html" style="color: white;">Login</a></button> 
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+<br><br>
+<img src="https://www.kfcpakistan.com/static/media/kfc-scholarship-img.8ed2d21b3fc3c5da04da.png">
+<br><br>
+<center>
+<img src="https://www.kfcpakistan.com/static/media/chatCSR_scholarship.afb55122643d47902ec7.png" style="width: 1000px;">
+<h3 style="color: white;">KFC PAKISTANS MITAO BHOOK PLATFORM IS PROVIDING 120+ HIGHER <br> EDUCATION SCHOLARSHIPS TO DESERVING STUDENTS ACROSS ALL HEC <br> RECOGNISED INSTITUTES IN PAKISTAN. THIS IS DONE IN COLLABORATION WITH <br>THE ORANGE TREE FOUNDATION, AN EDUCATION ADVOCATE WORKING TO <br> FURTHER EDUCATION IN THE COUNTRY.</h3>
+<img src="https://www.kfcpakistan.com/static/media/bucket_img.0574a062e4658290084c.png">
+
+</center>
+
+
+
+
+
+
+
+
+
+
+                <!-- Footer 1 Start -->  
+                <div class="footer " data-aos="fade-in" data-aos-duration="2000" style="background-color: red;">
+                  <div class="container-fluid">
+                      <div class="container">
+                          <div class="footer-info">
+                              <h2>KFC</h2>
+                              <h3>
+                                Regional Office Lahore
+                                Location
+                                27-A Ali Block New Garden Town Opposite Barkat Market </h3>
+                              <div class="footer-menu">
+                                  <p>  042-35884570</p>
+                                  <p >
+                                    customercare@kfcpakistan.com</p>
+                              </div>
+              <!--footer 3 Start-->
+
+  
+        <div class="footer-content">
+          <ul class="socials">
+            <li><a href="https://m.facebook.com/home.php"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/lidu.taa/"><i class="fab fa-instagram"> </i></a></li>
+            <li><a href="https://t.me/Official_Solo_Learn"> <i class="fab fa-telegram-plane"></i></a></li>
+            <li><a href="https://github.com/TWEBSITE"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2021 Designed by <span><a href="#" style="text-align: center;">Powered by: SimpleX Technology Solutions</a>.</span></p>
+        </div>
+      
+        
+          </footer>
+      
+
+</body>
+</html>

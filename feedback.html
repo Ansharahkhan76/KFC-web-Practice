@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: black;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #9c9999;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.button {
+  background-color: transparent;
+  border: red;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  outline-color: red;
+}
+
+
+
+
+
+.kfc-button {
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.kfc-button:hover {
+    background-color: red; /* Red background color on hover */
+}
+
+
+.kfc-login-button {
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+}
+.kfc-login-button:hover {
+    background-color: red; /* Red background color on hover */
+}
+
+.button-order {
+
+  background-color: rgb(240, 46, 46);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 30px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.button-order:hover {
+  background-color: red;
+}
+
+.image-container img {
+    width: 200px; 
+    transition: transform 0.3s;
+}
+
+
+.image-container img:hover {
+    transform: scale(1.2);
+}
+
+
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+	/********* Footer 1 Start **********/
+/*******************************/
+.footer {
+  position: relative;
+  margin-top: 45px;
+  background: #EF233C;
+}
+
+.footer .container-fluid {
+  padding: 60px 0 0 0;
+}
+
+.footer .footer-info {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.footer .footer-info h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer .footer-info h3 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer .footer-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer-menu p {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 0 15px;
+  border-right: 1px solid #ffffff;
+}
+
+.footer .footer-menu p:last-child {
+  border: none;
+}
+
+.footer .footer-social {
+  position: relative;
+  margin-top: 15px;
+}
+
+.footer .footer-social a {
+  display: inline-block;
+}
+
+.footer .footer-social a i {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #ffffff;
+  transition: .3s;
+}
+
+.footer .footer-social a:last-child i {
+  margin: 0;
+}
+
+.footer .footer-social a:hover i {
+  color: #414141;
+}
+
+.footer .copyright {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.footer .copyright::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1px;
+  top: 0;
+  left: 25%;
+  background: rgba(256, 256, 256, .2);
+}
+
+.footer .copyright p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer .copyright .col-md-6:last-child p {
+  text-align: right;
+}
+
+.footer .copyright p a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer .copyright p a:hover {
+  color: #414141;
+}
+
+@media (max-width: 575.98px) {
+  .footer .footer-info h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 600;
+  }
+
+  .footer .footer-info h3 {
+      margin-bottom: 20px;
+      font-size: 16px;
+  }
+
+  .footer .footer-menu p {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 0 5px;
+  }
+}
+
+
+/* Footer 2 Start*/
+.blog-footer {
+padding: 2.5rem 0;
+color: #727272;
+text-align: center;
+background-color: #f9f9f9;
+border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+margin-bottom: 0;
+}
+.blog-footer p{
+font-size: 15px;
+}
+
+/*social media icons*/
+.social-icons{
+  text-align: center;
+}
+
+
+.style {
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  padding: 5px 5px;
+  margin: 15px;
+  box-shadow: 2px 1px 3px 2px #383838;
+  position: relative;
+
+}
+
+.style .fab {
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.style:hover {
+  color: white;
+}
+
+/*For the circle buttom*/
+.amz-btn-circle {
+  border-radius: 50%;
+}
+
+/*For the rounded corner buttom */
+.amz-btn-round {
+  border-radius: 20%;
+}
+
+/*social media cols color define*/
+.col-rev-facebook:hover{
+  background: #3b5998;
+  transform: translate(0,-10px);
+}
+
+.col-rev-facebook a {
+color: #3b5998;
+  text-decoration: none;
+}
+.col-rev-facebook a:hover{
+color: #fff;
+}
+/*YouTube */
+.col-rev-youtube:hover {
+  background-color: #c4302b  ;
+     transform:translate(0, -10px);
+}
+.col-rev-youtube a{
+color:  #c4302b;
+text-decoration: none;
+}
+.col-rev-youtube a:hover{
+color: #fff;
+}
+/*tictok*/
+.col-rev-tiktok:hover {
+background: #000;
+
+     transform:translate(0, -10px);
+}
+.col-rev-tiktok a{
+    color: #000;
+text-decoration: none;
+}
+.col-rev-tiktok a:hover {
+color: #fff;
+}
+
+/*Instagram */
+.col-rev-instagram:hover {
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+
+     transform:translate(0, -10px);
+}
+.col-rev-instagram a{
+    color: #bc2a8d;
+text-decoration: none;
+}
+.col-rev-instagram a:hover {
+color: #fff;
+}
+/*telegram */
+.col-rev-telegram:hover {
+  background-color: #0088CC   ;
+     transform:translate(0, -10px);
+}
+.col-rev-telegram a{
+color:  #0088CC;
+text-decoration: none;
+}
+.col-rev-telegram a:hover{
+color: #fff;
+}
+h1{
+color: red;
+font-weight: bolder;
+}
+.heading{
+color: blue;
+font-weight: bold;
+}
+#pp{
+color: red;
+font-weight: bolder;
+}
+
+
+.ttt {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  text-align: left;
+  border-color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: red;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="about us.html">About Us</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="term& conditions.html">Terms & Conditions</a>
+    <a href="privacy policy.html">Privacy Policy</a>
+    <a href="contact us.html">Contact Us</a>
+    <a href="mitao bhook.html">Mitao Bhook</a>
+    <a href="Mitao Bhook-scholarship.html">Mitao Bhook-scholarship</a>
+    <a href="careers.html">Careers</a>
+  </div>
+</div>
+<strong><span style="font-size:30px;cursor:pointer;color: red;" onclick="openNav()">&#9776;  KFC</span></strong>
+<button class="kfc-button"><a href="login.html" style="color: white;">Delivery</a> </button>
+<button class="kfc-button"><a href="login.html" style="color: white;">Pickup </a></button>
+<button class="kfc-login-button"><a href="login.html" style="color: white;">Login</a></button> 
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+<br><br>
+
+<center>
+<strong><h1 style="color: white;">Have Some Feedback To Share?</h1></strong> 
+<h2 style="color: red;">Well, you’ve come to the right place!</h2>
+<p style="color: white;">Fill in the sections below and we'll be in touch soon, or if you want to contact a <br>specific store, visit our locations page for store contact details. * indicates a <br> required answer</p>
+
+<br><br>
+
+<section id="ttt">
+    <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</section>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

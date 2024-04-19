@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: black;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #9c9999;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.button {
+  background-color: transparent;
+  border: red;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  outline-color: red;
+}
+
+
+
+
+
+.kfc-button {
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.kfc-button:hover {
+    background-color: red; /* Red background color on hover */
+}
+
+
+.kfc-login-button {
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+}
+.kfc-login-button:hover {
+    background-color: red; /* Red background color on hover */
+}
+
+.button-order {
+
+  background-color: rgb(240, 46, 46);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 30px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.button-order:hover {
+  background-color: red;
+}
+
+.image-container img {
+    width: 200px; 
+    transition: transform 0.3s;
+}
+
+
+.image-container img:hover {
+    transform: scale(1.2);
+}
+
+
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+
+	/********* Footer 1 Start **********/
+/*******************************/
+.footer {
+  position: relative;
+  margin-top: 45px;
+  background: #EF233C;
+}
+
+.footer .container-fluid {
+  padding: 60px 0 0 0;
+}
+
+.footer .footer-info {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.footer .footer-info h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer .footer-info h3 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer .footer-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer-menu p {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 0 15px;
+  border-right: 1px solid #ffffff;
+}
+
+.footer .footer-menu p:last-child {
+  border: none;
+}
+
+.footer .footer-social {
+  position: relative;
+  margin-top: 15px;
+}
+
+.footer .footer-social a {
+  display: inline-block;
+}
+
+.footer .footer-social a i {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #ffffff;
+  transition: .3s;
+}
+
+.footer .footer-social a:last-child i {
+  margin: 0;
+}
+
+.footer .footer-social a:hover i {
+  color: #414141;
+}
+
+.footer .copyright {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.footer .copyright::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1px;
+  top: 0;
+  left: 25%;
+  background: rgba(256, 256, 256, .2);
+}
+
+.footer .copyright p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer .copyright .col-md-6:last-child p {
+  text-align: right;
+}
+
+.footer .copyright p a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer .copyright p a:hover {
+  color: #414141;
+}
+
+@media (max-width: 575.98px) {
+  .footer .footer-info h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 600;
+  }
+
+  .footer .footer-info h3 {
+      margin-bottom: 20px;
+      font-size: 16px;
+  }
+
+  .footer .footer-menu p {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 0 5px;
+  }
+}
+
+
+/* Footer 2 Start*/
+.blog-footer {
+padding: 2.5rem 0;
+color: #727272;
+text-align: center;
+background-color: #f9f9f9;
+border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+margin-bottom: 0;
+}
+.blog-footer p{
+font-size: 15px;
+}
+
+/*social media icons*/
+.social-icons{
+  text-align: center;
+}
+
+
+.style {
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  padding: 5px 5px;
+  margin: 15px;
+  box-shadow: 2px 1px 3px 2px #383838;
+  position: relative;
+
+}
+
+.style .fab {
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.style:hover {
+  color: white;
+}
+
+/*For the circle buttom*/
+.amz-btn-circle {
+  border-radius: 50%;
+}
+
+/*For the rounded corner buttom */
+.amz-btn-round {
+  border-radius: 20%;
+}
+
+/*social media cols color define*/
+.col-rev-facebook:hover{
+  background: #3b5998;
+  transform: translate(0,-10px);
+}
+
+.col-rev-facebook a {
+color: #3b5998;
+  text-decoration: none;
+}
+.col-rev-facebook a:hover{
+color: #fff;
+}
+/*YouTube */
+.col-rev-youtube:hover {
+  background-color: #c4302b  ;
+     transform:translate(0, -10px);
+}
+.col-rev-youtube a{
+color:  #c4302b;
+text-decoration: none;
+}
+.col-rev-youtube a:hover{
+color: #fff;
+}
+/*tictok*/
+.col-rev-tiktok:hover {
+background: #000;
+
+     transform:translate(0, -10px);
+}
+.col-rev-tiktok a{
+    color: #000;
+text-decoration: none;
+}
+.col-rev-tiktok a:hover {
+color: #fff;
+}
+
+/*Instagram */
+.col-rev-instagram:hover {
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+
+     transform:translate(0, -10px);
+}
+.col-rev-instagram a{
+    color: #bc2a8d;
+text-decoration: none;
+}
+.col-rev-instagram a:hover {
+color: #fff;
+}
+/*telegram */
+.col-rev-telegram:hover {
+  background-color: #0088CC   ;
+     transform:translate(0, -10px);
+}
+.col-rev-telegram a{
+color:  #0088CC;
+text-decoration: none;
+}
+.col-rev-telegram a:hover{
+color: #fff;
+}
+h1{
+color: red;
+font-weight: bolder;
+}
+.heading{
+color: blue;
+font-weight: bold;
+}
+#pp{
+color: red;
+font-weight: bolder;
+}
+
+
+/*footer 3 start*/
+
+footer{
+/**if you want the footer stick to bottom remove the comment**/
+/**
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+**/
+background: #111;
+height: auto;
+width: 100%;
+font-family: Monospace;
+padding-top: 40px;
+color: #fff;
+}
+
+
+
+.footer-content{
+
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+
+}
+
+.footer-content h3{
+font-size: 1.8rem;
+font-weight: 400;
+text-transform: capitalize;
+line-height: 3rem;
+}
+
+.footer-content p{
+max-width: 500px;
+margin: 10px auto;
+line-height: 28px;
+font-size: 14px;
+}
+
+.footer-content img{
+width: 60px;
+}
+
+.socials{
+list-style: none;
+display: flex;
+align-items: center; 
+justify-content: center;
+margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+margin: 0 10px;
+}
+
+.socials a{
+text-decoration: none;
+color: #fff;
+}
+
+.socials a i{
+font-size: 1.1rem;
+transition: color .4s ease;
+}
+
+.socials a:hover i{
+color: aqua;
+}
+
+.footer-bottom{
+background: #000;
+width: 100vw;
+padding: 20px 0;
+text-align: center;
+}
+
+.footer-bottom p{
+font-size: 14px;
+word-spacing: 2px;
+text-transform: capitalize;
+}
+
+.footer-bottom span{
+text-transform: uppercase;
+opacity: .4;
+font-weight: 200;
+}
+
+.footer-bottom span a{
+text-decoration: none;
+color: #fff;
+}
+
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="about us.html">About Us</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="term& conditions.html">Terms & Conditions</a>
+    <a href="privacy policy.html">Privacy Policy</a>
+    <a href="contact us.html">Contact Us</a>
+    <a href="mitao bhook.html">Mitao Bhook</a>
+    <a href="Mitao Bhook-scholarship.html">Mitao Bhook-scholarship</a>
+    <a href="careers.html">Careers</a>
+  </div>
+</div>
+ <strong><span style="font-size:30px;cursor:pointer;color: red;" onclick="openNav()">&#9776;  KFC</span></strong>
+<button class="kfc-button"><a href="login.html" style="color: white;">Delivery</a> </button>
+<button class="kfc-button"><a href="login.html" style="color: white;">Pickup </a></button>
+<button class="kfc-login-button"><a href="login.html" style="color: white;">Login</a></button> 
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%"; 
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+<br><br>
+<center>
+<strong><h1 style="color: white;">Terms & Conditions</h1></strong>
+<h2 style="color: red;">KFC TERMS OF USE</h2></center>
+
+<p style="color: white;">
+  These Terms of Use ("Terms") govern your use the KFC Corporation ("KFC") Web sites on which they appear, and your use of the features therein. KFC may revise the information, services and the resources contained in this web site from time to time and we reserve the right to make such changes without obligation to notify past, current or prospective visitors.
+</p>
+<strong> <h3 style="color: white;">NO WARRANTY/LIMITATION ON LIABILITY:</h3></strong>
+<p  style="color: white;">KFC strives to ensure that the information contained in this web site is accurate and reliable. However, KFC and the World Wide Web (or Web Site Host) are not infallible and errors may sometimes occur. Therefore, to the fullest extent permissible pursuant to applicable law, KFC makes no representations about the reliability of the features of this Site, the KFC Content (defined below), Submitted Content (defined below), or any other Site feature. You acknowledge that any reliance on such material and/or systems will be at your own risk. KFC is not responsible for the information, data, text or other materials that may appear in Submitted Content or may otherwise be submitted by users. Opinions expressed in Submitted Content do not necessarily reflect the opinions of KFC, and KFC does not endorse and has no control over Submitted Content. Submitted Content is not necessarily reviewed by KFC prior to posting and KFC makes no warranties, express or implied, as to the Submitted Content or to the accuracy and reliability of the Submitted Content. KFC makes no representations regarding the amount of time that any KFC Content or Submitted Content will be preserved.</p>
+<p  style="color: white;">KFC disclaims any warranty of any kind, whether express or implied, as to any matter whatsoever relating to this web site, including without limitation the merchantability or fitness for any particular purpose. KFC is not liable or responsible for any damages or injuries caused by use of this web site (such as viruses , omissions or misstatements). THIS SITE IS PROVIDED ON AN "AS IS, AS AVAILABLE" BASIS. NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THOSE OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, ARE MADE WITH RESPECT TO THIS SITE OR ANY INFORMATION OR SOFTWARE THEREIN. UNDER NO CIRCUMSTANCES, INCLUDING NEGLIGENCE, SHALL KFC BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES THAT RESULT FROM THE USE OF OR INABILITY TO USE THIS SITE, NOR SHALL KFC BE RESPONSIBLE FOR ANY DAMAGES WHATSOEVER THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES, ERRORS, DEFECTS, DELAYS IN OPERATION OR TRANSMISSION, OR ANY FAILURE OF PERFORMANCE WHETHER OR NOT CAUSED BY EVENTS BEYOND KFC' S REASONABLE CONTROL, INCLUDING BUT NOT LIMITED TO ACTS OF GOD, COMMUNICATIONS LINE FAILURE, THEFT, DESTRUCTION, OR UNAUTHORIZED ACCESS TO THIS SITE' S RECORDS, PROGRAMS, OR SERVICES. In no event shall KFC' s total liability for all damages, losses, and causes of action exceed five dollars (US $5.00). Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages; as a result, the above limitation or exclusion may not apply to you.</p>
+<strong><h3  style="color: white;">COMMUNICATING WITH KFC:</h3></strong>
+<p  style="color: white;">On certain areas of our Site, you may be given the ability to contact us by electronic mail, for example, to sign up for services such as e-mail notifications and newsletters about our products, to register for a particular sweepstakes or contest, or to participate in our interactive forums, like chat rooms and message boards. The information that you provide to us through this Site is governed by our Privacy Policy. These areas are designed to give our users the ability to contact us with questions or concerns, to engage in dialogue with us and other Site users, or to take advantage of other features we may provide from time to time. They are not intended for, and should not be used to, submit unsolicited ideas. It is company policy not to accept such unsolicited ideas, concepts, techniques, procedures, methods, systems, designs, plans, charts or similar materials from outside parties. By entering the Site you acknowledge and agree that any materials, ideas or other communications you transmit to us in any manner and for any reason will not be treated as confidential or proprietary. It is KFC's policy not to accept, and to return, any unsolicited ideas, concepts, techniques, procedures, methods, systems, designs, plans, charts or other similar materials. Nevertheless, should you submit such materials, you understand that you have no ownership rights in any ideas you may submit, and you expressly disclaim any rights or causes of action you may have with respect to any materials you may submit.</p>
+<br>
+<strong><h3  style="color: white;">KFC PROPERTY:</h3></strong>
+<p  style="color: white;">This web site contains many valuable trademarks owned and used by KFC Corporation, and its subsidiaries and affiliates throughout the world. These trademarks are used to distinguish KFC's quality products and services. The text, graphics and html code contained in this web site are the exclusive property of KFC Corporation. ("KFC Content"). KFC Content is protected from reproduction and simulation under national and international laws and except where otherwise noted, is not to be copied, distributed, displayed, reproduced or transmitted in any form, by any means, without the prior express written permission of KFC Corporation. Third party content, such as user-posted content, including graphics, video clips, images, trademarks, trade names, characters, and trademarks and copyrights is the property of the third parties that market or license that content, and is used by KFC subject to license, or subject to the fair use provisions of U.S. copyright or trademark law or made permissible under other applicable law. If you are a trademark or copyright owner and you believe that your trademark or copyright rights have been violated, please go to our Proprietary Rights Complaint Process page and follow the instructions at that area.</p>
+<strong><h3  style="color: white;">USER-SUBMITTED CONTENT:</h3></strong>
+<p style="color: white;">On certain areas of our Site you may be able to submit text, files, images, photos, videos, sounds, musical works, works of authorship, and other materials and content ("Submitted Content"). You have no ownership rights in your account or other access to the Site or features therein, and KFC may delete all Submitted Content at any time, with or without notice, if KFC deems that you have violated these Terms, the law, or for any other reason. KFC assumes no liability for any information removed from our Site, and reserves the right to permanently restrict access to the Site or for features therein.
+
+  By posting, displaying, publishing or otherwise submitting Submitted Content on or through this Site, you understand and acknowledge that any materials, ideas or other communications you transmit in any manner and for any reason will not be treated as confidential or proprietary. Furthermore, you acknowledge and agree that any ideas, concepts, techniques, procedures, methods, systems, video, scripts, music, photographs, designs, plans, charts, or other materials you transmit to KFC may be used by KFC anywhere, anytime, and for any reason whatsoever subject to following terms:
+  
+  You hereby grant to KFC a limited, non-exclusive, sub-licensable, worldwide, fully-paid, royalty free license to use, modify, publicly perform, publicly display, reproduce, and distribute Submitted Content. This license includes the right to host, index, cache, distribute, and tag any Submitted Content, as well as the right to sublicense Submitted Content to third parties, including other users, for use on other platforms, such as for use on mobile phones, in video or music software computer programs.</p>
+<p style="color: white;">You represent and warrant that you own the Submitted Content displayed, published or posted by you on the Site and otherwise have the right to grant the license set forth herein, and the displaying, publishing or posting of your Submitted Content, and our use thereof, does not and will not violate the privacy rights, publicity rights, copyrights, trademark rights, contract rights or any other intellectual property rights or other rights of any person or entity. You agree to pay for all royalties, fees, and any other monies owing any person by reason of any Submitted Content displayed, published or posted by you to the Site.
+
+  You agree that your Submitted Content is gratuitous and made without restriction, and will not place KFC under any obligation. You agree that KFC is free to disclose the ideas contained in the Submission, including, for example, ingredient or menu item suggestions, on a non-confidential basis to anyone or otherwise use the ideas without any additional compensation to you. You acknowledge that, by acceptance of your Submission, KFC does not waive any rights to use similar or related ideas previously known to KFC, or developed by its employees, or obtained from sources other than you.
+  
+  Your posting of Submitted Content is further subject to the following posting rules:</p>
+
+  <p style="color: white;">.  You may not post any content that, as determined in KFC's sole discretion, is unlawful, harmful, tortious, defamatory, libelous, obscene, invasive of the privacy of another person, threatening, harassing, abusive, hateful, racist, infringing, pornographic, violent or otherwise objectionable or inappropriate.</p>
+  <p style="color: white;">.  You may not post any content that contains personal information about any individual, violates the privacy of any other individual or entity, or anything that you are under a contractual obligation to keep private or confidential. You agree that you will not impersonate any person or organization, including without limitation, the personnel of KFC. You further agree that you will not misrepresent an affiliation with another person or organization, nor will you post any content that contains slanderous or libelous comments about others, or that infringes any copyright, trademark, patent, trade secret or other intellectual property right of a third party.</p>
+  <p style="color: white;">.  KFC does not necessarily monitor any materials posted, transmitted, or communicated to or within the Site. If you believe that something on the Site violates these Terms please contact Copyright Agent, KFC Corporation, 1441 Gardiner Lane, Louisville, Kentucky 40213; or by email to copyright@kfc.com.</p>
+<h3 style="color: white;">ARBITRATION AND DISPUTE RESOLUTION:</h3>
+<p style="color: white;">Any controversy or claim arising out of or relating to your use of the KFC site or your Submitted Content shall be settled by binding arbitration in a location determined by the arbitrator as set forth herein (provided that such location is reasonably convenient for claimant), or at such other location as may be mutually agreed upon by the parties, in accordance with the procedural rules for commercial disputes set forth in the Comprehensive Arbitration Rules and Procedures of JAMS ("JAMS Rules and Procedures") then prevailing, and judgment upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. The arbitrator shall be selected pursuant to the JAMS Rules and Procedures. The arbitrator shall apply Kentucky law consistent with the Federal Arbitration Act and applicable statutes of limitations, and shall honor claims of privilege recognized at law. In the event that the claimant is able to demonstrate that the costs of arbitration will be prohibitive as compared to the costs of litigation, KFC will pay as much of the claimant's filing and hearing fees in connection with the arbitration as the arbitrator deems necessary to prevent the arbitration from being cost-prohibitive. If any part of this arbitration provision is deemed to be invalid, unenforceable or illegal (other than that claims will not be arbitrated on a class or representative basis), or otherwise conflicts with the rules and procedures established by JAMS, then the balance of this arbitration provision shall remain in effect and shall be construed in accordance with its terms as if the invalid, unenforceable, illegal or conflicting provision were not contained herein. If, however, the portion that is deemed invalid, unenforceable or illegal is that claims will not be arbitrated on a class or representative basis, then the entirety of this arbitration provision shall be null and void, and neither claimant nor KFC shall be entitled to arbitrate their dispute. Upon filing a demand for arbitration, all parties to such arbitration shall have the right of discovery, which discovery shall be completed within sixty days after the demand for arbitration is made, unless further extended by mutual agreement of the parties. The prevailing party shall be entitled to an award by the arbitrator of reasonable attorneys' fees and other costs reasonably incurred in connection with the arbitration. </p>
+
+
+
+
+
+
+
+                <!-- Footer 1 Start -->  
+                <div class="footer " data-aos="fade-in" data-aos-duration="2000" style="background-color: red;">
+                  <div class="container-fluid">
+                      <div class="container">
+                          <div class="footer-info">
+                              <h2>KFC</h2>
+                              <h3>
+                                Regional Office Lahore
+                                Location
+                                27-A Ali Block New Garden Town Opposite Barkat Market </h3>
+                              <div class="footer-menu">
+                                  <p>  042-35884570</p>
+                                  <p >
+                                    customercare@kfcpakistan.com</p>
+                              </div>
+              <!--footer 3 Start-->
+
+  
+        <div class="footer-content">
+          <ul class="socials">
+            <li><a href="https://m.facebook.com/home.php"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/lidu.taa/"><i class="fab fa-instagram"> </i></a></li>
+            <li><a href="https://t.me/Official_Solo_Learn"> <i class="fab fa-telegram-plane"></i></a></li>
+            <li><a href="https://github.com/TWEBSITE"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>copyright &copy;2021 Designed by <span><a href="#" style="text-align: center;">Powered by: SimpleX Technology Solutions</a>.</span></p>
+        </div>
+      
+        
+          </footer>
+      
+
+</body>
+</html>
